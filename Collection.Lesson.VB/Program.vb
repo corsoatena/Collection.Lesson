@@ -14,8 +14,8 @@ Module Program
         Dim Lt2 As List(Of String) = New List(Of String)()
         Lt2.Add("Welcome")
         Lt2.Add("to")
-        Lt2.Add("JavaTpoint")
-        Lt2.Add("Site")
+        Lt2.Add("Corso Atena")
+
 
         'Access all element of List1  
         For Each i In Lt
