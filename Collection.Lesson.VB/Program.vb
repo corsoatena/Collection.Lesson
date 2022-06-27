@@ -1,6 +1,8 @@
 Imports System.Collections.Generic
 Module Program
     Sub Main()
+
+        Dim customer As Person = New Person("Bruno", 40)
         Dim Lt As List(Of Integer) = New List(Of Integer)()
         Dim i As Integer
         'Dim j As String  
@@ -29,5 +31,16 @@ Module Program
         Console.WriteLine(" Added elements in List2")
 
 
+    End Sub ' -> Sub  -> function OR Method
+End Module ' -> Module  -> Classes
+Public Class Person
+    Dim _nome As String
+    Dim _age As Integer
+
+    Sub New(ByVal Name As String, ByVal Age As Integer)
+        Me._nome = Name
+        Me._age = Age
+
     End Sub
-End Module
+
+End Class

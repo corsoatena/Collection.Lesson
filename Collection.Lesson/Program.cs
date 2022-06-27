@@ -18,15 +18,15 @@ namespace Collection.Lesson
             travel.AddTraveller(traveller3);
             travel.AddTraveller(traveller4);
 
-            //foreach (var item in travel._travellers)
-            //{
-            //    if(item._age > 36)
-            //    {
-            //        Console.WriteLine(item._name);
-            //    }
-            //}
+            foreach (var item in travel._travellers)
+            {
+                if (item._age > 36)
+                {
+                    Console.WriteLine(item._name);
+                }
+            }
 
-          
+
 
         }
     }
