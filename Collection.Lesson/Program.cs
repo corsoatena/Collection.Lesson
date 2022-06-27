@@ -12,41 +12,39 @@ namespace Collection.Lesson
             Traveller traveller3 = new Traveller("Damiano",23);
             Traveller traveller4 = new Traveller("Abreham",38);
 
-            Travel travel = new Travel();// Creao l'oggetto Travel è la Contenitore
+            Viaggio travel = new Viaggio();// Creao l'oggetto Travel è la Contenitore
             travel.AddTraveller(traveller1);
             travel.AddTraveller(traveller2);
             travel.AddTraveller(traveller3);
             travel.AddTraveller(traveller4);
-
-            foreach (var item in travel._travellers)
-            {
+           
+            foreach (var item in travel._viaggiatori)
+            {  
+                
                 if (item._age > 36)
                 {
                     Console.WriteLine(item._name);
                 }
             }
-
-
-
         }
     }
 
-    public class Travel
+    public class Viaggio // -> Viaggio n Viaggiatori
     {
-        public List<Traveller> _travellers = new List<Traveller>(); // Collection
+        internal List<Traveller> _viaggiatori = new List<Traveller>(); // Collection
 
-        public Travel()
+        public Viaggio()
         {
 
         }
-        public void AddTraveller(Traveller traveller)
+        internal void AddTraveller(Traveller traveller)
         {
-            _travellers.Add(traveller);
+            _viaggiatori.Add(traveller);
          
         }
 
     }
-    public class Traveller
+    internal class Traveller
     {
         public string _name;
         public int _age; 

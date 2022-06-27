@@ -32,15 +32,19 @@ Module Program ' ->  dichiarazione della Liberia
 
 
     End Sub ' -> Sub  -> function OR Method
-End Module ' -> Module  -> Classes
-Public Class Person
+End Module ' -> Module  
+Public Class Person  '-> Classes
     Dim _nome As String
     Dim _age As Integer
 
+
+    'Costruttore
     Sub New(ByVal Name As String, ByVal Age As Integer)
         Me._nome = Name
         Me._age = Age
 
     End Sub
+
+
 
 End Class
