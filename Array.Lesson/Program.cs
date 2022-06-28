@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Array.Lesson
 {
@@ -6,47 +7,42 @@ namespace Array.Lesson
     {
         static void Main(string[] args)
         {
-            Traveller traveller1 = new Traveller("Bruno", 40);
-            Traveller traveller2 = new Traveller("Diego", 36);
-            Traveller traveller3 = new Traveller("Damiano", 23);
-            Traveller traveller4 = new Traveller("Abreham", 38);
-            Traveller traveller5 = new Traveller("michele", 34);
-            Traveller traveller6 = new Traveller("Alex", 21);
-            Traveller traveller7 = new Traveller("Mario", 30);
+            Viaggio travel =new Viaggio();
 
-            Viaggio travel = new Viaggio();// Creao l'oggetto Travel è la Contenitore
-            travel.AddTraveller(traveller1);
-            travel.AddTraveller(traveller2);
-            travel.AddTraveller(traveller3);
-            travel.AddTraveller(traveller4);
-            travel.AddTraveller(traveller5);
-            travel.AddTraveller(traveller6);
-            travel.AddTraveller(traveller7);
-
-            for (int i = 0; i < travel._viaggiatori.Length; i++)
+            Traveller[] Travellers = new Traveller[10] //candidati per un viaggio
             {
-                Console.WriteLine(travel._viaggiatori[i]._name);//5 null
+                new Traveller("Bruno",40),
+                new Traveller("Diego",36),
+                new Traveller("Damiano",40),
+                new Traveller("Abreham",36),
+                new Traveller("Michele",40),
+                new Traveller("Alex",36),
+                new Traveller("Mario",40),
+                new Traveller("Angelo",36),
+                new Traveller("Elisa",40),
+                new Traveller("Laura",36)
+
+            };
+
+            int counter = 0;
+
+            while (counter < travel._viaggiatori.Length)
+            {
+                travel.AddTraveller(Travellers[counter]);
+                counter++;//6
+            } //esce dal ciclo se counter == 6
+
+            foreach (var item in travel._viaggiatori)
+            {
+                Console.WriteLine(item._name);
             }
-
-              //System.NullReferenceException: 'Object reference not set to an instance of an object.'
-
-              //travel._viaggiatori[5] was null.
-
-
-            //foreach (var item in travel._viaggiatori)
-            //{
-
-            //    if (item._age > 36)
-            //    {
-            //        Console.WriteLine(item._name);
-            //    }
-            //}
         }
     }
 
     public class Viaggio // -> Viaggio n Viaggiatori
     {   
         const int _viaggiatoriNumbers = 6;
+        
         int counter = 0;
         internal Traveller[] _viaggiatori = new Traveller[_viaggiatoriNumbers];
 
@@ -56,8 +52,11 @@ namespace Array.Lesson
         }
         internal void AddTraveller(Traveller traveller)
         {
-            _viaggiatori[counter] = traveller; //0          
-            counter++; 
+            if (counter < _viaggiatori.Length)
+            {
+                _viaggiatori[counter] = traveller;
+                counter++; 
+            }
         }
 
     }
